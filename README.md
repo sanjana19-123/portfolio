@@ -52,7 +52,7 @@ I’m passionate about building reliable test automation frameworks, improving d
 
 ## 📄 Download My Resume
 
-Click to download 👉 [Download My Resume](./Resumme.pdf)
+Click to download 👉 [Download My Resume](Resumme.pdf)
 
 ---
 
