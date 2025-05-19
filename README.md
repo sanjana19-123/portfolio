@@ -3,7 +3,7 @@ Hello Everyone, welcome to my profile
 <link rel="stylesheet" href="assets/style.css" />
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
-<img src="assets/profile.jpg" alt="Sanjana Gandhi" class="profile" />
+<img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile" width="400" height="400" style="border: 4px dashed #007acc; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: block; margin: 0 auto 20px;" />
 
 # 👋 Hello, I'm Sanjana Gandhi
 
