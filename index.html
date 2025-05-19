@@ -12,11 +12,24 @@
       margin: 0;
       padding: 0;
     }
+    @media (min-width: 768px) {
+      body {
+        background-image: url('https://cdn.pixabay.com/photo/2021/06/15/19/00/technology-6337985_1280.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        opacity: 0.98;
+      }
+    }
+    }
     .container {
       max-width: 960px;
       margin: 0 auto;
       padding: 40px 20px;
       text-align: center;
+      background-color: rgba(13, 17, 23, 0.85);
+      backdrop-filter: blur(4px);
     }
     .profile-img {
       width: 150px;
@@ -90,23 +103,64 @@
       height: 40px;
     }
   </style>
+  <!-- AOS Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true, duration: 1000 });
+    });
+  </script>
+  <!-- AOS Library -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init({ once: true, duration: 1000 });
+
+      // Typing Effect for Roles
+      const roles = [
+        "QA Engineer",
+        "Test Analyst",
+        "Automation Leader"
+      ];
+      let index = 0;
+      let letter = 0;
+      const roleElement = document.querySelector(".roles");
+
+      function type() {
+        if (index === roles.length) index = 0;
+        if (letter <= roles[index].length) {
+          roleElement.textContent = roles[index].substring(0, letter++);
+          setTimeout(type, 100);
+        } else {
+          setTimeout(() => {
+            letter = 0;
+            index++;
+            type();
+          }, 1200);
+        }
+      }
+      if (roleElement) type();
+    });
+  </script>
 </head>
 <body>
   <div class="container">
-    <img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile-img">
+    <img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile-img" data-aos="zoom-in">
     <h1>Sanjana Gandhi</h1>
     <div class="roles">QA Engineer | Test Analyst | Automation Leader</div>
     <p class="quote">"Every user deserves a bug-free experience. That’s my job."</p>
     <a href="Resumme.pdf" class="btn">Download Resume</a>
 
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>About Me</h2>
       <p>
         I’m a QA Engineer with 8+ years of experience ensuring flawless product releases in finance, banking, and insurance. I specialize in UI and API automation, regression testing, and delivering high-quality software with robust testing strategies.
       </p>
     </div>
 
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>Tech Stack</h2>
       <div class="tech-stack">
         <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java">
@@ -124,7 +178,7 @@
       </div>
     </div>
 
-  <div class="section">
+    <div class="section" data-aos="fade-up">
   <h2>Featured Projects</h2>
 
   <h3>🧪 <a href="https://github.com/sanjanagandhi/selenium-cucumber-framework" target="_blank">Selenium Cucumber Framework</a></h3>
@@ -151,7 +205,7 @@
   </ul>
 </div>
 
-    <div class="section">
+    <div class="section" data-aos="fade-up">
       <h2>My QA Philosophy</h2>
       <ul>
         <li>Start with the user story, not just the UI.</li>
@@ -162,7 +216,7 @@
       </ul>
     </div>
 
- <div class="section contact">
+    <div class="section contact" data-aos="fade-up">
       <h2>Connect with Me</h2>
       <p>
         📧 <a href="mailto:gsanjanasanju0932@gmail.com">gsanjanasanju0932@gmail.com</a><br>
@@ -172,5 +226,50 @@
 
     <p style="font-style: italic; margin-top: 40px;">“A great QA doesn’t break the system — they ensure no one else can.”</p>
   </div>
+  <!-- Scroll to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+          style="position: fixed; bottom: 30px; right: 30px; background-color: #4CAF50; color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+    ⬆️ Top
+  </button>
+  <!-- Scroll to Top Button -->
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+          style="position: fixed; bottom: 30px; right: 30px; background-color: #4CAF50; color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
+    ⬆️ Top
+  </button>
+
+  <!-- Experience Counter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const experienceTarget = 8;
+      const counterElement = document.createElement('p');
+      counterElement.style.fontSize = '20px';
+      counterElement.style.color = '#81C784';
+      counterElement.style.fontWeight = 'bold';
+      counterElement.setAttribute('data-aos', 'fade-in');
+
+      let current = 0;
+      const duration = 1000;
+      const steps = 30;
+      const stepTime = duration / steps;
+
+      function animateCounter() {
+        const increment = experienceTarget / steps;
+        const interval = setInterval(() => {
+          current += increment;
+          if (current >= experienceTarget) {
+            current = experienceTarget;
+            clearInterval(interval);
+          }
+          counterElement.textContent = `Years of Experience: ${current.toFixed(1)}+`;
+        }, stepTime);
+      }
+
+      const aboutSection = document.querySelector(".section:nth-of-type(1)");
+      if (aboutSection) {
+        aboutSection.appendChild(counterElement);
+        animateCounter();
+      }
+    });
+  </script>
 </body>
 </html>
