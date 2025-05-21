@@ -52,6 +52,21 @@
       margin: 10px 0;
       font-style: italic;
     }
+    .typing {
+      display: inline-block;
+      border-right: 2px solid #e0c097;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink-caret 0.75s step-end infinite;
+      font-size: 20px;
+      color: #e0c097;
+      font-style: italic;
+      width: 0;
+    }
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #e0c097; }
+    }
     .quote {
       font-style: italic;
       font-size: 18px;
@@ -123,7 +138,7 @@
   <div class="container">
     <img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile-img">
     <h1>Sanjana Gandhi</h1>
-    <div class="roles">QA Engineer | Test Analyst | Automation Leader</div>
+    <div class="roles"><span class="typing"></span></div>
     <p class="quote">"Every user deserves a bug-free experience. That’s my job."</p>
     <a href="Resumme.pdf" class="btn">Download Resume</a>
 
@@ -197,7 +212,25 @@
     <p style="font-style: italic; margin-top: 40px;">“A great QA doesn’t break the system — they ensure no one else can.”</p>
   </div>
 
-  <!-- Scroll to Top Button -->
   <button id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆</button>
+
+  <!-- Typewriter JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const text = "QA Engineer | Test Analyst | Automation Leader";
+      const typingEl = document.querySelector(".typing");
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          typingEl.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 60);
+        }
+      }
+
+      typeWriter();
+    });
+  </script>
 </body>
 </html>
