@@ -4,63 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanjana Gandhi - QA Engineer Portfolio</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
     body {
-      background-color: #0d1117;
-      color: #c9d1d9;
-      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #f5f0e1;
+      font-family: 'Playfair Display', serif;
       margin: 0;
       padding: 0;
-    }
-    @media (min-width: 768px) {
-      body {
-        background-image: url('https://cdn.pixabay.com/photo/2021/06/15/19/00/technology-6337985_1280.jpg');
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-        background-size: cover;
-        opacity: 0.98;
-      }
-    }
     }
     .container {
       max-width: 960px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 40px;
       text-align: center;
-      background-color: rgba(13, 17, 23, 0.85);
-      backdrop-filter: blur(4px);
+      background-color: #1c1c1c;
+      border: 1px solid #e0c097;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.05);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     .profile-img {
       width: 150px;
       height: 200px;
-      border: 3px solid #4CAF50;
+      border: 3px solid #e0c097;
       border-radius: 12px;
       object-fit: cover;
     }
     h1 {
       font-size: 42px;
-      color: #ffffff;
-      margin-top: 20px;
-      background: linear-gradient(90deg, #4CAF50, #81C784);
+      background: linear-gradient(90deg, #e0c097, #ffe8a3);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      margin-top: 20px;
     }
     .roles {
       font-size: 20px;
-      color: #4CAF50;
+      color: #e0c097;
       margin: 10px 0;
+      font-style: italic;
     }
     .quote {
       font-style: italic;
       font-size: 18px;
-      color: #dddddd;
+      color: #d4c4b4;
       margin-bottom: 30px;
     }
     .btn {
       background-color: transparent;
-      border: 2px solid #4CAF50;
-      color: #4CAF50;
+      border: 2px solid #e0c097;
+      color: #e0c097;
       padding: 12px 24px;
       border-radius: 8px;
       text-decoration: none;
@@ -68,16 +69,17 @@
       transition: all 0.3s ease;
     }
     .btn:hover {
-      background-color: #4CAF50;
-      color: #0d1117;
+      background-color: #e0c097;
+      color: #111;
     }
     .section {
       margin: 60px 0;
       text-align: left;
+      animation: fadeIn 1s ease-in-out;
     }
     .section h2 {
-      color: #4CAF50;
-      border-bottom: 2px solid #4CAF50;
+      color: #e0c097;
+      border-bottom: 2px solid #e0c097;
       display: inline-block;
       padding-bottom: 4px;
     }
@@ -86,7 +88,7 @@
       line-height: 1.6;
     }
     .contact a {
-      color: #58a6ff;
+      color: #e0c097;
       text-decoration: none;
     }
     .contact a:hover {
@@ -102,65 +104,37 @@
     .tech-stack img {
       height: 40px;
     }
+    #top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #e0c097;
+      color: #111;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      font-size: 18px;
+    }
   </style>
-  <!-- AOS Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({ once: true, duration: 1000 });
-    });
-  </script>
-  <!-- AOS Library -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init({ once: true, duration: 1000 });
-
-      // Typing Effect for Roles
-      const roles = [
-        "QA Engineer",
-        "Test Analyst",
-        "Automation Leader"
-      ];
-      let index = 0;
-      let letter = 0;
-      const roleElement = document.querySelector(".roles");
-
-      function type() {
-        if (index === roles.length) index = 0;
-        if (letter <= roles[index].length) {
-          roleElement.textContent = roles[index].substring(0, letter++);
-          setTimeout(type, 100);
-        } else {
-          setTimeout(() => {
-            letter = 0;
-            index++;
-            type();
-          }, 1200);
-        }
-      }
-      if (roleElement) type();
-    });
-  </script>
 </head>
 <body>
   <div class="container">
-    <img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile-img" data-aos="zoom-in">
+    <img src="IMG_9997.JPG" alt="Sanjana Gandhi" class="profile-img">
     <h1>Sanjana Gandhi</h1>
     <div class="roles">QA Engineer | Test Analyst | Automation Leader</div>
     <p class="quote">"Every user deserves a bug-free experience. That’s my job."</p>
     <a href="Resumme.pdf" class="btn">Download Resume</a>
 
-    <div class="section" data-aos="fade-up">
+    <div class="section">
       <h2>About Me</h2>
       <p>
         I’m a QA Engineer with 8+ years of experience ensuring flawless product releases in finance, banking, and insurance. I specialize in UI and API automation, regression testing, and delivering high-quality software with robust testing strategies.
       </p>
     </div>
 
-    <div class="section" data-aos="fade-up">
+    <div class="section">
       <h2>Tech Stack</h2>
       <div class="tech-stack">
         <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white" alt="Java">
@@ -178,34 +152,30 @@
       </div>
     </div>
 
-    <div class="section" data-aos="fade-up">
-  <h2>Featured Projects</h2>
+    <div class="section">
+      <h2>Featured Projects</h2>
+      <h3>🧪 <a href="https://github.com/sanjanagandhi/selenium-cucumber-framework" target="_blank">Selenium Cucumber Framework</a></h3>
+      <ul>
+        <li>BDD framework using Java, Cucumber, and TestNG</li>
+        <li>Page Object Model, cross-browser testing, CI/CD ready</li>
+      </ul>
+      <h3>📡 <a href="https://github.com/sanjanagandhi/rest-assured-api-framework" target="_blank">Rest Assured API Testing</a></h3>
+      <ul>
+        <li>API test automation for payment workflows</li>
+        <li>Validates headers, status codes, JSON payloads, and schemas</li>
+      </ul>
+      <h3>🧠 <a href="https://github.com/sanjanagandhi/etl-testing-sql-python" target="_blank">ETL Testing with SQL + Python</a></h3>
+      <ul>
+        <li>Automates data validation across GCP, Oracle, BigQuery</li>
+        <li>SQL and Pandas used to compare source vs target transformations</li>
+      </ul>
+      <h3>🥋 <a href="https://github.com/sanjanagandhi/karate-api-testing" target="_blank">Karate API Automation</a></h3>
+      <ul>
+        <li>DSL-based framework to test REST APIs with no Java boilerplate</li>
+      </ul>
+    </div>
 
-  <h3>🧪 <a href="https://github.com/sanjanagandhi/selenium-cucumber-framework" target="_blank">Selenium Cucumber Framework</a></h3>
-  <ul>
-    <li>BDD framework using Java, Cucumber, and TestNG</li>
-    <li>Page Object Model, cross-browser testing, CI/CD ready</li>
-  </ul>
-
-  <h3>📡 <a href="https://github.com/sanjanagandhi/rest-assured-api-framework" target="_blank">Rest Assured API Testing</a></h3>
-  <ul>
-    <li>API test automation for payment workflows</li>
-    <li>Validates headers, status codes, JSON payloads, and schemas</li>
-  </ul>
-
-  <h3>🧠 <a href="https://github.com/sanjanagandhi/etl-testing-sql-python" target="_blank">ETL Testing with SQL + Python</a></h3>
-  <ul>
-    <li>Automates data validation across GCP, Oracle, BigQuery</li>
-    <li>SQL and Pandas used to compare source vs target transformations</li>
-  </ul>
-
-  <h3>🥋 <a href="https://github.com/sanjanagandhi/karate-api-testing" target="_blank">Karate API Automation</a></h3>
-  <ul>
-    <li>DSL-based framework to test REST APIs with no Java boilerplate</li>
-  </ul>
-</div>
-
-    <div class="section" data-aos="fade-up">
+    <div class="section">
       <h2>My QA Philosophy</h2>
       <ul>
         <li>Start with the user story, not just the UI.</li>
@@ -216,7 +186,7 @@
       </ul>
     </div>
 
-    <div class="section contact" data-aos="fade-up">
+    <div class="section contact">
       <h2>Connect with Me</h2>
       <p>
         📧 <a href="mailto:gsanjanasanju0932@gmail.com">gsanjanasanju0932@gmail.com</a><br>
@@ -226,50 +196,8 @@
 
     <p style="font-style: italic; margin-top: 40px;">“A great QA doesn’t break the system — they ensure no one else can.”</p>
   </div>
+
   <!-- Scroll to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
-          style="position: fixed; bottom: 30px; right: 30px; background-color: #4CAF50; color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-    ⬆️ Top
-  </button>
-  <!-- Scroll to Top Button -->
-  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
-          style="position: fixed; bottom: 30px; right: 30px; background-color: #4CAF50; color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
-    ⬆️ Top
-  </button>
-
-  <!-- Experience Counter Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const experienceTarget = 8;
-      const counterElement = document.createElement('p');
-      counterElement.style.fontSize = '20px';
-      counterElement.style.color = '#81C784';
-      counterElement.style.fontWeight = 'bold';
-      counterElement.setAttribute('data-aos', 'fade-in');
-
-      let current = 0;
-      const duration = 1000;
-      const steps = 30;
-      const stepTime = duration / steps;
-
-      function animateCounter() {
-        const increment = experienceTarget / steps;
-        const interval = setInterval(() => {
-          current += increment;
-          if (current >= experienceTarget) {
-            current = experienceTarget;
-            clearInterval(interval);
-          }
-          counterElement.textContent = `Years of Experience: ${current.toFixed(1)}+`;
-        }, stepTime);
-      }
-
-      const aboutSection = document.querySelector(".section:nth-of-type(1)");
-      if (aboutSection) {
-        aboutSection.appendChild(counterElement);
-        animateCounter();
-      }
-    });
-  </script>
+  <button id="top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">⬆</button>
 </body>
 </html>
